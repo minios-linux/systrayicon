@@ -1,20 +1,11 @@
-# Systray Icon Launcher
+# systrayicon
+Adapting the systrayicon source code to build a package for use in MiniOS Flux (a Slax clone from the MiniOS team).
 
-This is a tiny launcher which shows an icon in system tray (systray)
-and runs a command or application after user clicks the icon.
-Requires GTK2 libraries. To build, you'll need libgtk2.0-dev package installed.
-Systray Icon Launcher was created by Miguel Bastos for Slax <www.slax.org>
-
-    Usage:
-      systrayicon [OPTION...]
-
-    Help Options:
-      -h, --help                        Show help options
-
-    Application Options:
-      -i, --iconfile=image              Image file to use as icon.
-      -c, --command="program -args"     Command to execute.
-      -t, --tooltip                     Text to display when mouse is over the icon.
-                                        (optional)
-
-
+# building
+```sh
+git clone https://github.com/minios-linux/systrayicon.git
+mv xlunch-slax systrayicon-1.0
+cd systrayicon-1.0
+dh_make --createorig -s -y
+dpkg-buildpackage -rfakeroot -uc -us
+```
